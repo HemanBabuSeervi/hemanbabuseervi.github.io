@@ -1,15 +1,4 @@
 TERM=ansi
-htmlHeader='
-<!--<meta http-equiv=refresh content=1>-->
-<link rel="stylesheet" href="style.css" /><title>Welcome</title>
-    <header>
-	<div id="name">R. Heman Babu Seervi</div>
-	<div id="resume"><a href="resume/resume.pdf">Resume</a></div>
-    </header>
-    <section class="intro">
-    	<div>Hi! I am a Computer Science Student and this is a repository for my personal projects. Click on project titles to view them (In Construction!!)</div>
-    </section>'
-echo $htmlHeader > indexUnformatted.html
 
 language(){
 	echo "<section class=\"$1 projectCategory\">" >> indexUnformatted.html
@@ -41,12 +30,41 @@ language(){
 	done
 	echo "</div></section>" >> indexUnformatted.html
 }
+blog(){
+    #blogHead="<section id=\"blog\"><h2>Blog</h2><div class=\"content\">"
+    cat blog/index-header.html > blogUnformatted.html
+    for year in $(ls blog/[0-9][0-9][0-9][0-9] -d); do
+        year=$(basename $year)
+        for month in $(ls blog/$year/[0-9][0-9] -d); do
+            month=$(basename $month)
+            for day in $(ls blog/$year/$month/[0-9][0-9].html); do
+                day=$(basename $day)
+                title="$(echo $day | sed 's/.html//')-$month-$year"
+                notes="$(cat blog/$year/$month/$day)"
+                echo "<div class=\"day\"><h3>$title</h3><div class=notes>$notes</div></div>" >> blogUnformatted.html
+            done
+        done
+    done
+    cat blog/index-footer.html >> blogUnformatted.html
+}
+backup(){
+    if [[ -e $1 ]]; then
+        backupExt=$(date +"%H-%M-%S=%d-%m-%Y")
+        mkdir -p $(dirname "backup/$1")
+        mv "$1" "backup/$1.$backupExt"
+    fi
+}
 
-if [ -e index.html ]; then
-	mv index.html backup/$(date +"%H-%M-%S=%d-%m-%Y").html
-fi
+backup "index.html"
+backup "blog/index.html"
+
+cat index-header.html > indexUnformatted.html
 language "cpp"
 language "java"
 language "js"
+blog
+cat index-footer.html >> indexUnformatted.html
+
 tidy -indent --indent-spaces 4 --tidy-mark no -quiet indexUnformatted.html > index.html
-rm indexUnformatted.html
+tidy -indent --indent-spaces 4 --tidy-mark no -quiet blogUnformatted.html > blog/index.html
+rm indexUnformatted.html blogUnformatted.html

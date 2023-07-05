@@ -1,17 +1,25 @@
 body{
 	background-color:#000;
 	color:#ddd;
-	margin:0;
+	margin:auto;
+    max-width:950px;
 }
 header{
-	display:flex;
-	flex-direction:row;
-	justify-content:space-between;
-
+    text-align:center;
 	padding:20px;
-	background-color:#fc0;
-	color:black;
-	font-size:1.5rem;
+}
+header>#name{
+	font-size:1.7rem;
+    color:#c7c700;
+}
+nav{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+}
+nav>*{
+    padding-left:5px;
+    padding-right:5px;
 }
 .intro{
 	max-width:600px;
@@ -19,11 +27,12 @@ header{
 	margin:auto;
 }
 h1{
-	font-size:2.5rem;
+	font-size:1.5rem;
 	font-weight:100;
 	margin:0;
 	padding:15px;
 	color:#eee;
+    border-bottom-left-radius:25px;
 }
 .projectCategory{
 	margin:20px;
@@ -31,10 +40,10 @@ h1{
 	background:#111;
 	color:#fff;
 }
-section>.content{
+.projectCategory>.content{
 	padding:20px;
 }
-section>.content>.box{
+.projectCategory>.content>.box{
 	padding:10px;
 	margin-bottom:10px;
 }
@@ -63,10 +72,9 @@ section>.content>.box{
 	text-align:center;
 }
 .box>h2>a{
-    color:#aaf;
-    text-decoration:none;
     font-weight:100;
 }
+
 
 .cpp>h1{
 	background:#292;
@@ -96,4 +104,9 @@ section>.content>.box{
 }
 .js>.content>.box{
 	background:#121;
+}
+
+a{
+    color:#aaf;
+    text-decoration:none;
 }
