@@ -1,0 +1,99 @@
+body{
+	background-color:#000;
+	color:#ddd;
+	margin:0;
+}
+header{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+
+	padding:20px;
+	background-color:#fc0;
+	color:black;
+	font-size:1.5rem;
+}
+.intro{
+	max-width:600px;
+	padding:50px;
+	margin:auto;
+}
+h1{
+	font-size:2.5rem;
+	font-weight:100;
+	margin:0;
+	padding:15px;
+	color:#eee;
+}
+.projectCategory{
+	margin:20px;
+	padding:10px;
+	background:#111;
+	color:#fff;
+}
+section>.content{
+	padding:20px;
+}
+section>.content>.box{
+	padding:10px;
+	margin-bottom:10px;
+}
+.majorTags, .minorTags{
+	display:inline-block;
+	padding:.1rem;
+}
+.majorTags>span, .minorTags>span{
+	border-width:1px;
+	border-style:solid;
+	border-radius:4px;
+	margin:3px;
+	padding:2px;
+	font-size:.7rem;
+}
+.info{
+	padding-top:10px;
+	padding-bottom:5px;
+}
+.box{
+    font-size:1.1rem;
+}
+.box>h2{
+	margin:0;
+	font-size:1.9rem;
+	text-align:center;
+}
+.box>h2>a{
+    color:#aaf;
+    text-decoration:none;
+    font-weight:100;
+}
+
+.cpp>h1{
+	background:#292;
+}
+.cpp .majorTags>span{
+	border-color:#292;
+}
+.cpp>.content>.box{
+	background:#212;
+}
+
+.java>h1{
+	background:#922;
+}
+.java .majorTags>span{
+	border-color:#922;
+}
+.java>.content>.box{
+	background:#122;
+}
+
+.js>h1{
+	background:#929;
+}
+.js .majorTags>span{
+	border-color:#929;
+}
+.js>.content>.box{
+	background:#121;
+}
