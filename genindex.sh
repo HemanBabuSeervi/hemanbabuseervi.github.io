@@ -1,5 +1,7 @@
 TERM=ansi
-htmlHeader='<meta http-equiv=refresh content=1><link rel="stylesheet" href="style.css" /><title>Welcome</title>
+htmlHeader='
+<!--<meta http-equiv=refresh content=1>-->
+<link rel="stylesheet" href="style.css" /><title>Welcome</title>
     <header>
 	<div id="name">R. Heman Babu Seervi</div>
 	<div id="resume"><a href="resume/resume.pdf">Resume</a></div>
