@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Heman's Blog</title>
+</head>
+<body>
+    <section id="blog">
+        <h2>Blog</h2>
+        <div class="content">
+            <div class="day">
+                <h3>05-07-2023</h3>
+                <div class="notes">
+                    <p>All of the below problems to be learned and
+                    solved in Java</p><label for=
+                    "pendingoptionst">Pending</label> <select name=
+                    "pendingoptionst">
+                        <option>
+                            Activity Selection
+                        </option>
+                        <option>
+                            Fractional Knapsack
+                        </option>
+                        <option>
+                            Minimum Sum absolute difference pairs
+                        </option>
+                        <option>
+                            Maximum length chain of pairs
+                        </option>
+                        <option>
+                            Indian Coins
+                        </option>
+                        <option>
+                            Job Sequencing
+                        </option>
+                        <option>
+                            Chocola
+                        </option>
+                        <option>
+                            Binary Trees: PreOrder, InOrder
+                            PostOrder, LevelOrder Traversals
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
