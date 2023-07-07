@@ -13,7 +13,7 @@ language(){
         fi
 		descfile=$1/$(echo $i | sed "s/.$1/.desc/ ")
 		if [ ! -e $descfile ]; then
-			vim $descfile
+			nvim $descfile
 		fi
 		title=$(sed -n "1 p" $descfile)
 		majorTags=$(sed -n "2 p" $descfile)
