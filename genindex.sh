@@ -31,13 +31,12 @@ language(){
 	echo "</div></section>" >> indexUnformatted.html
 }
 blog(){
-    #blogHead="<section id=\"blog\"><h2>Blog</h2><div class=\"content\">"
     cat blog/index-header.html > blogUnformatted.html
-    for year in $(ls blog/[0-9][0-9][0-9][0-9] -d); do
+    for year in $(ls blog/[0-9][0-9][0-9][0-9] -dr); do
         year=$(basename $year)
-        for month in $(ls blog/$year/[0-9][0-9] -d); do
+        for month in $(ls blog/$year/[0-9][0-9] -dr); do
             month=$(basename $month)
-            for day in $(ls blog/$year/$month/[0-9][0-9].html); do
+            for day in $(ls blog/$year/$month/[0-9][0-9].html -r); do
                 day=$(basename $day)
                 title="$(echo $day | sed 's/.html//')-$month-$year"
                 notes="$(cat blog/$year/$month/$day)"
