@@ -9,6 +9,30 @@
         <h2>Blog</h2>
         <div class="content">
             <div class="day">
+                <h3>05-07-2023</h3>
+                <div class="notes">
+                    <p>All of the below problems to be learned and
+                    solved in Java</p>
+                    <details>
+                        <summary>
+                            Pending Work
+                        </summary>
+                        <ul>
+                            <li>Activity Selection</li>
+                            <li>Fractional Knapsack</li>
+                            <li>Minimum Sum absolute difference
+                            pairs</li>
+                            <li>Maximum length chain of pairs</li>
+                            <li>Indian Coins</li>
+                            <li>Job Sequencing</li>
+                            <li>Chocola</li>
+                            <li>Binary Trees: PreOrder, InOrder
+                            PostOrder, LevelOrder Traversals</li>
+                        </ul>
+                    </details>
+                </div>
+            </div>
+            <div class="day">
                 <h3>07-07-2023</h3>
                 <div class="notes">
                     <p>More Java Work</p>
@@ -47,30 +71,6 @@
                             -&gt; BST, BST -&gt; Balanced BST, Size
                             of Largest BST in BT, Merge 2 BSTs, AVL
                             Trees</li>
-                        </ul>
-                    </details>
-                </div>
-            </div>
-            <div class="day">
-                <h3>05-07-2023</h3>
-                <div class="notes">
-                    <p>All of the below problems to be learned and
-                    solved in Java</p>
-                    <details>
-                        <summary>
-                            Pending Work
-                        </summary>
-                        <ul>
-                            <li>Activity Selection</li>
-                            <li>Fractional Knapsack</li>
-                            <li>Minimum Sum absolute difference
-                            pairs</li>
-                            <li>Maximum length chain of pairs</li>
-                            <li>Indian Coins</li>
-                            <li>Job Sequencing</li>
-                            <li>Chocola</li>
-                            <li>Binary Trees: PreOrder, InOrder
-                            PostOrder, LevelOrder Traversals</li>
                         </ul>
                     </details>
                 </div>
