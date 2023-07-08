@@ -1,4 +1,4 @@
-TERM=ansi
+TERM=ansi #bug-fix for tidy to work
 
 language(){
 	echo "<section class=\"$1 projectCategory\">" >> indexUnformatted.html
@@ -30,22 +30,6 @@ language(){
 	done
 	echo "</div></section>" >> indexUnformatted.html
 }
-blog(){
-    cat blog/index-header.html > blogUnformatted.html
-    for year in $(ls blog/[0-9][0-9][0-9][0-9] -dr); do
-        year=$(basename $year)
-        for month in $(ls blog/$year/[0-9][0-9] -dr); do
-            month=$(basename $month)
-            for day in $(ls blog/$year/$month/[0-9][0-9].html -r); do
-                day=$(basename $day)
-                title="$(echo $day | sed 's/.html//')-$month-$year"
-                notes="$(cat blog/$year/$month/$day)"
-                echo "<div class=\"day\"><h3>$title</h3><div class=notes>$notes</div></div>" >> blogUnformatted.html
-            done
-        done
-    done
-    cat blog/index-footer.html >> blogUnformatted.html
-}
 backup(){
     if [[ -e $1 ]]; then
         backupExt=$(date +"%H-%M-%S=%d-%m-%Y")
@@ -55,15 +39,12 @@ backup(){
 }
 
 backup "index.html"
-backup "blog/index.html"
 
 cat index-header.html > indexUnformatted.html
 language "cpp"
 language "java"
 language "js"
-blog
 cat index-footer.html >> indexUnformatted.html
 
 tidy -indent --indent-spaces 4 --tidy-mark no -quiet indexUnformatted.html > index.html
-tidy -indent --indent-spaces 4 --tidy-mark no -quiet blogUnformatted.html > blog/index.html
-rm indexUnformatted.html blogUnformatted.html
+rm indexUnformatted.html
