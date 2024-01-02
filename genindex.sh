@@ -6,11 +6,6 @@ language(){
 	echo "<div class=content>" >> indexUnformatted.html
 	for i in $(ls $1 | grep ".$1$") # The $ in the end of grep command means end of string
 	do
-        author="Coded by R. Heman"
-        comment="//$author"
-        if [[ $(head -1 $1/$i) != $comment ]]; then
-            sed -i "1i $comment" $1/$i
-        fi
 		descfile=$1/$(echo $i | sed "s/.$1/.desc/ ")
 		if [ ! -e $descfile ]; then
 			nvim $descfile
